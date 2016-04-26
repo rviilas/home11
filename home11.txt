@@ -1,0 +1,21 @@
+CREATE TABLE rviilas_loomaaed(
+id INT PRIMARY KEY AUTO_INCREMENT ,
+nimi VARCHAR( 50 ) ,
+vanus INT,
+liik VARCHAR( 50 ) ,
+puur INT
+);
+
+insert into rviilas_loomaaed values(1, 'Kitty', 10, 'Kass', 1),
+(2, 'Dolfu', 14, 'Kass', 1),
+(3, 'Nuff', 2, 'Koer', 2),
+(4, 'Shelby', 2, 'Koer', 3),
+(5, 'Dumbo', 34, 'Elevant',4)
+
+select nimi, puur from rviilas_loomaaed where puur = 1;
+
+select max(vanus), min(vanus) from rviilas_loomaaed;
+
+select puur, count(*) as loomi_puuris from rviilas_loomaaed group by puur;
+
+update rviilas_loomaaed set vanus=vanus+1;
